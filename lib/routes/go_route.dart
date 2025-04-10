@@ -5,15 +5,13 @@ import 'package:hunt_share_live_admin_panel/features/forget/pages/forget_passwor
 import 'package:hunt_share_live_admin_panel/features/login/pages/login_page.dart';
 import 'package:hunt_share_live_admin_panel/features/signup/pages/signUp_page.dart';
 import 'package:hunt_share_live_admin_panel/features/verify_email/verify_email_page.dart';
+
 import 'error_route.dart';
 import 'route_transition.dart';
 
 class MyAppRouter {
   static final router = GoRouter(
-
-     initialLocation: '/${AppRoute.dashboardScreen}',
-
-
+    initialLocation: '/${AppRoute.dashboardScreen}',
     routes: [
       GoRoute(
         name: AppRoute.errorPage,
@@ -69,7 +67,6 @@ class MyAppRouter {
           child: const VerifyEmailPage(),
         ),
       ),
-
     ],
     errorPageBuilder: (context, state) {
       return const MaterialPage(child: ErrorPage());
@@ -91,8 +88,8 @@ class AppRoute {
   static const loginPage = 'login-page';
   static const forgetPasswordPage = 'forget_password-page';
   static const verifyEmailPage = 'verify_email-page';
-    static const String ordersPage = 'orders-page';
-    static const String orderDetailPage = 'order-detail-page';
+  static const String ordersPage = 'orders-page';
+  static const String orderDetailPage = 'order-detail-page';
   static const String customerDetailPage = 'customer-detail-page';
   static const String promotionDetailPage = 'promotion-detail-page';
 }
