@@ -7,7 +7,6 @@ import 'package:hunt_share_live_admin_panel/common/widgets/custom_textfield.dart
 import 'package:hunt_share_live_admin_panel/features/add_event/pages/add_event_page.dart';
 import 'package:hunt_share_live_admin_panel/features/add_game/pages/add_game_page.dart';
 import 'package:hunt_share_live_admin_panel/features/add_gift/pages/add_gift_page.dart';
-import 'package:hunt_share_live_admin_panel/features/creator_insight/pages/creator_insight_page.dart';
 import 'package:hunt_share_live_admin_panel/features/dashboard/provider/dashboard_provider.dart';
 import 'package:hunt_share_live_admin_panel/features/gift_store/pages/gift_store_page.dart';
 import 'package:hunt_share_live_admin_panel/features/gift_types/pages/gift_types_page.dart';
@@ -29,14 +28,15 @@ class DashboardPage extends StatefulWidget {
 class DashboardPageState extends State<DashboardPage> {
   TextEditingController searchController = TextEditingController();
   final GlobalKey<ScaffoldState> _mobileScaffoldKey =
-  GlobalKey<ScaffoldState>();
+      GlobalKey<ScaffoldState>();
   final GlobalKey<ScaffoldState> _tabletScaffoldKey =
-  GlobalKey<ScaffoldState>();
+      GlobalKey<ScaffoldState>();
 
   final List<Widget> _screens = [
     const HomePage(),
     RealTimeAnalyticsPage(),
-    CreatorInsightPage(),
+    AddGiftPage(),
+    /*CreatorInsightPage(),*/
     GiftTypesPage(),
     AddGiftPage(),
     GiftStorePage(),
@@ -158,18 +158,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 0
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'All User',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 0
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 0
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -202,18 +207,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 1
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Real Time Analytics',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 1
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 1
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -246,18 +256,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 2
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Creator Insight',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 2
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 2
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -290,18 +305,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 3
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Gift Types',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 3
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 3
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -334,18 +354,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 4
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Add Gift',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 4
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 4
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -378,18 +403,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 5
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Gift Store',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 5
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 5
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -422,18 +452,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 6
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Add Event',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 6
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 6
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -467,18 +502,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 7
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Total Event',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 7
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 7
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -511,18 +551,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 8
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Add Game',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 8
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 8
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -555,18 +600,23 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 9
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Payment Method',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 9
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color: provider.selectedIndex == 9
+                                                  ? colorScheme(context)
+                                                      .onPrimary
+                                                  : colorScheme(context)
+                                                      .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -599,18 +649,24 @@ class DashboardPageState extends State<DashboardPage> {
                                         colorFilter: ColorFilter.mode(
                                           provider.selectedIndex == 10
                                               ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
+                                              : colorScheme(context)
+                                                  .outlineVariant,
                                           BlendMode.srcIn,
                                         ),
                                       ),
                                       const SizedBox(width: 10),
                                       Text(
                                         'Logout',
-                                        style: textTheme(context).labelMedium?.copyWith(
-                                          color: provider.selectedIndex == 10
-                                              ? colorScheme(context).onPrimary
-                                              : colorScheme(context).outlineVariant,
-                                        ),
+                                        style: textTheme(context)
+                                            .labelMedium
+                                            ?.copyWith(
+                                              color:
+                                                  provider.selectedIndex == 10
+                                                      ? colorScheme(context)
+                                                          .onPrimary
+                                                      : colorScheme(context)
+                                                          .outlineVariant,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -627,8 +683,7 @@ class DashboardPageState extends State<DashboardPage> {
                   ],
                 ),
               ),
-            )
-            ,
+            ),
             Expanded(
               flex: 4,
               child: Column(
@@ -651,10 +706,10 @@ class DashboardPageState extends State<DashboardPage> {
                                   style: textTheme(context)
                                       .labelMedium
                                       ?.copyWith(
-                                      color: colorScheme(context)
-                                          .onPrimary
-                                          .withOpacity(0.66),
-                                      fontWeight: FontWeight.w400),
+                                          color: colorScheme(context)
+                                              .onPrimary
+                                              .withOpacity(0.66),
+                                          fontWeight: FontWeight.w400),
                                 );
                               },
                             ),
@@ -677,7 +732,7 @@ class DashboardPageState extends State<DashboardPage> {
                             onPressed: () {},
                             icon: Badge(
                                 padding:
-                                const EdgeInsets.only(top: 5, right: 10),
+                                    const EdgeInsets.only(top: 5, right: 10),
                                 backgroundColor: colorScheme(context).error,
                                 child: Icon(
                                     color: colorScheme(context).onPrimary,
@@ -689,9 +744,9 @@ class DashboardPageState extends State<DashboardPage> {
                           radius: width * 0.015,
                           child: Center(
                               child: Icon(
-                                Icons.person,
-                                size: width * 0.015,
-                              )),
+                            Icons.person,
+                            size: width * 0.015,
+                          )),
                         ),
                         SizedBox(width: width * 0.01),
                         InkWell(
@@ -769,7 +824,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 0
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -782,20 +838,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 0
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Dashboard',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 0
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              0
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -815,7 +878,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 1
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -828,20 +892,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 1
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Store',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 1
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              1
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -861,7 +932,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 2
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -870,24 +942,32 @@ class DashboardPageState extends State<DashboardPage> {
                                       child: Row(
                                         children: [
                                           SvgPicture.asset(
-                                            AppIcons.storeIcon, // Add Orders icon
+                                            AppIcons
+                                                .storeIcon, // Add Orders icon
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 2
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Orders',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 2
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              2
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -907,7 +987,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 3
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -920,20 +1001,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 3
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Customers',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 3
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              3
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -953,7 +1041,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 4
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -966,20 +1055,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 4
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Promotions',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 4
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              4
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -999,7 +1095,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 5
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1012,20 +1109,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 5
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'User Queries',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 5
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              5
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1045,7 +1149,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 6
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1058,20 +1163,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 6
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Analytics',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 6
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              6
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1092,7 +1204,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 7
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1105,20 +1218,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 7
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Settings',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 7
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              7
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1138,7 +1258,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 8
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1151,20 +1272,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.017,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 8
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Logout',
-                                            style: textTheme(context).labelLarge?.copyWith(
-                                              color: provider.selectedIndex == 8
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .labelLarge
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              8
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1186,8 +1314,7 @@ class DashboardPageState extends State<DashboardPage> {
               ],
             ),
           ),
-        )
-        ,
+        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1263,9 +1390,9 @@ class DashboardPageState extends State<DashboardPage> {
                     radius: width * 0.02,
                     child: Center(
                         child: Icon(
-                          Icons.person,
-                          size: width * 0.02,
-                        )),
+                      Icons.person,
+                      size: width * 0.02,
+                    )),
                   ),
                   SizedBox(width: width * 0.01),
                   InkWell(
@@ -1340,7 +1467,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 0
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1353,20 +1481,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 0
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Dashboard',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 0
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              0
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1386,7 +1521,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 1
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1399,20 +1535,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 1
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Store',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 1
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              1
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1432,7 +1575,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 2
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1445,20 +1589,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 2
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Orders',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 2
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              2
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1478,7 +1629,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 3
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1491,20 +1643,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 3
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Customers',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 3
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              3
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1524,7 +1683,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 4
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1537,20 +1697,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 4
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Promotions',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 4
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              4
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1570,7 +1737,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 5
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1583,20 +1751,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 5
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'User Queries',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 5
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              5
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1616,7 +1791,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 6
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1629,20 +1805,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 6
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Analytics',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 6
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              6
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1662,7 +1845,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 7
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1675,20 +1859,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 7
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Settings',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 7
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              7
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1708,7 +1899,8 @@ class DashboardPageState extends State<DashboardPage> {
                                         color: provider.selectedIndex == 8
                                             ? colorScheme(context).primary
                                             : Colors.transparent,
-                                        borderRadius: BorderRadius.circular(12.0),
+                                        borderRadius:
+                                            BorderRadius.circular(12.0),
                                       ),
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 12,
@@ -1721,20 +1913,27 @@ class DashboardPageState extends State<DashboardPage> {
                                             height: width * 0.023,
                                             colorFilter: ColorFilter.mode(
                                               provider.selectedIndex == 8
-                                                  ? colorScheme(context).onPrimary
+                                                  ? colorScheme(context)
+                                                      .onPrimary
                                                   : colorScheme(context)
-                                                  .outlineVariant,
+                                                      .outlineVariant,
                                               BlendMode.srcIn,
                                             ),
                                           ),
                                           const SizedBox(width: 10),
                                           Text(
                                             'Logout',
-                                            style: textTheme(context).bodyMedium?.copyWith(
-                                              color: provider.selectedIndex == 8
-                                                  ? colorScheme(context).onPrimary
-                                                  : colorScheme(context).outlineVariant,
-                                            ),
+                                            style: textTheme(context)
+                                                .bodyMedium
+                                                ?.copyWith(
+                                                  color:
+                                                      provider.selectedIndex ==
+                                                              8
+                                                          ? colorScheme(context)
+                                                              .onPrimary
+                                                          : colorScheme(context)
+                                                              .outlineVariant,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -1756,8 +1955,7 @@ class DashboardPageState extends State<DashboardPage> {
               ],
             ),
           ),
-        )
-        ,
+        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -1841,9 +2039,9 @@ class DashboardPageState extends State<DashboardPage> {
                     radius: width * 0.02,
                     child: Center(
                         child: Icon(
-                          Icons.person,
-                          size: width * 0.02,
-                        )),
+                      Icons.person,
+                      size: width * 0.02,
+                    )),
                   ),
                   SizedBox(width: width * 0.01),
                   InkWell(

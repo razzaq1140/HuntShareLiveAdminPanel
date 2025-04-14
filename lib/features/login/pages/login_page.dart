@@ -22,7 +22,6 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
 
   final ValueNotifier<bool> _obscureText = ValueNotifier<bool>(true);
-  final ValueNotifier<bool> _obscureConfirmText = ValueNotifier<bool>(true);
   final ValueNotifier<bool> isLoading = ValueNotifier<bool>(false);
   @override
   Widget build(BuildContext context) {
