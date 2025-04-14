@@ -24,8 +24,6 @@ class CustomTextFormField extends StatelessWidget {
   final Color? fillColor;
   final Color? hintColor;
   final Color? inputColor;
-  final Color? borderColor;
-  final Color? focusBorderColor;
   final Color? cursorColor;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -62,7 +60,7 @@ class CustomTextFormField extends StatelessWidget {
     this.labelText,
     this.initialValue,
     this.obscureText = false,
-    this.filled = true,
+    this.filled = false,
     this.isCollapsed,
     this.isDense,
     this.isEnabled = true,
@@ -70,8 +68,6 @@ class CustomTextFormField extends StatelessWidget {
     this.fillColor,
     this.hintColor,
     this.inputColor,
-    this.borderColor,
-    this.focusBorderColor,
     this.cursorColor,
     this.suffixIcon,
     this.prefixIcon,
@@ -152,28 +148,28 @@ class CustomTextFormField extends StatelessWidget {
             isDense: isDense,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: borderColor ?? Colors.transparent,
+                color: colorScheme(context).outlineVariant,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(borderRadius ?? 12),
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: focusBorderColor ?? Colors.transparent,
+                color: colorScheme(context).outlineVariant,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(borderRadius ?? 12),
             ),
             errorBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.transparent,
+                color: colorScheme(context).outlineVariant,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(borderRadius ?? 12),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.transparent,
+                color: colorScheme(context).outlineVariant,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(borderRadius ?? 12),

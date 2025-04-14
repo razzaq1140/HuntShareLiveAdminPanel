@@ -40,6 +40,7 @@ dependencies:
   number_pagination: ^1.1.5
   image_picker: ^1.1.2
   provider: ^6.1.4
+  file_picker: ^10.1.0
 
 
 dev_dependencies:
